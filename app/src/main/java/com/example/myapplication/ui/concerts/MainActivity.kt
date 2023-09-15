@@ -16,6 +16,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.myapplication.ui.tab.Tab
 
 @Preview(showBackground = true)
 @Composable
@@ -33,8 +34,8 @@ fun menu(){
 
         Column(
             modifier = Modifier
-                .fillMaxSize()
-                .padding(10.dp)
+                .height(500.dp)
+                .weight(1f)
                 .verticalScroll(rememberScrollState())
         ) {
 
@@ -179,6 +180,7 @@ fun menu(){
             }
 
         }
+        Tab()
     }
 
 }
@@ -226,8 +228,8 @@ fun concertCard(
     
     Card(
         modifier = Modifier
-            .width(185.dp)
-            .height(240.dp)
+            .width(195.dp)
+            .height(245.dp)
             .padding(10.dp),
         shape = RoundedCornerShape(15.dp),
         elevation = 5.dp
@@ -266,7 +268,6 @@ fun concertCard(
             }
         }
     }
-
 }
 
 
