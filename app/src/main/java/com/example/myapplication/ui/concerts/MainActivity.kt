@@ -16,16 +16,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.myapplication.ui.tab.Tab
-
-@Preview(showBackground = true)
-@Composable
-fun mainScreen(){
-    menu()
-}
+import androidx.navigation.NavController
+import com.example.myapplication.ui.tab.MyTab
 
 @Composable
-fun menu(){
+fun Menu(navController: NavController){
 
     Column(
         modifier = Modifier.fillMaxSize()
@@ -38,91 +33,6 @@ fun menu(){
                 .weight(1f)
                 .verticalScroll(rememberScrollState())
         ) {
-
-            Text(
-                modifier = Modifier.padding(start = 12.dp, end = 180.dp, top = 10.dp),
-                text = "Your favorites",
-                fontSize = 23.sp
-            )
-
-            //First Row
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .horizontalScroll(
-                        rememberScrollState()
-                    )
-            ){
-
-                concertCard(
-                    painter = painterResource(id = R.drawable.deadmau),
-                    contentDescription = "",
-                    eventTittle = "Deamau5",
-                    eventDescription = "Cube V3 Release"
-                )
-
-                concertCard(
-                    painter = painterResource(id = R.drawable.oliver),
-                    contentDescription = "",
-                    eventTittle = "Oliver Heldens",
-                    eventDescription = "HILO SOLD OUT"
-                )
-
-                concertCard(
-                    painter = painterResource(id = R.drawable.garrix),
-                    contentDescription = "",
-                    eventTittle = "Martin Garrix",
-                    eventDescription = "Will perfon soon"
-                )
-
-                concertCard(
-                    painter = painterResource(id = R.drawable.guetta),
-                    contentDescription = "",
-                    eventTittle = "David Guetta",
-                    eventDescription = "Playing 'Like I Do'"
-                )
-
-
-            }
-
-            //Second row sports
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .horizontalScroll(
-                        rememberScrollState()
-                    )
-            ){
-
-                concertCard(
-                    painter = painterResource(id = R.drawable.utmb),
-                    contentDescription = "",
-                    eventTittle = "UTMB 2023",
-                    eventDescription = "Chamonix"
-                )
-
-                concertCard(
-                    painter = painterResource(id = R.drawable.nbamatch),
-                    contentDescription = "",
-                    eventTittle = "LAL VS MEM",
-                    eventDescription = "8:00 PM"
-                )
-
-                concertCard(
-                    painter = painterResource(id = R.drawable.utg),
-                    contentDescription = "",
-                    eventTittle = "UTG 2023",
-                    eventDescription = "Ultra Maraton Guatemala"
-                )
-
-                concertCard(
-                    painter = painterResource(id = R.drawable.cilclistica),
-                    contentDescription = "Vuelta ciclistica",
-                    eventTittle = "Vuelta ciclistica",
-                    eventDescription = "Etapa 2 110km +1000mD+"
-                )
-
-            }
 
             Text(
                 modifier = Modifier.padding(start = 12.dp, end = 180.dp, top = 10.dp),
@@ -180,7 +90,7 @@ fun menu(){
             }
 
         }
-        Tab()
+        MyTab(navController)
     }
 
 }
