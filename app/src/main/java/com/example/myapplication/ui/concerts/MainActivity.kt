@@ -40,7 +40,38 @@ fun Menu(navController: NavController){
                 fontSize = 18.sp
             )
 
-            //All concerts row
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .horizontalScroll(
+                        rememberScrollState()
+                    )
+            ){
+
+                concertCard(
+                    painter = painterResource(id = R.drawable.deadmau),
+                    contentDescription = "",
+                    eventTittle = "Deadmau5",
+                    eventDescription = "Cube V3 Released"
+                )
+
+                concertCard(
+                    painter = painterResource(id = R.drawable.oliver),
+                    contentDescription = "",
+                    eventTittle = "Oliver Heldens",
+                    eventDescription = "Just released 10 out of 10'"
+                )
+
+                concertCard(
+                    painter = painterResource(id = R.drawable.garrix),
+                    contentDescription = "",
+                    eventTittle = "Martin Garrix",
+                    eventDescription = "Will perfom soon'"
+                )
+
+            }
+
+            //Row2
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -63,8 +94,16 @@ fun Menu(navController: NavController){
                     eventDescription = "Releasing 'Split'"
                 )
 
+                concertCard(
+                    painter = painterResource(id = R.drawable.guetta),
+                    contentDescription = "",
+                    eventTittle = "David Guetta",
+                    eventDescription = "Back on Tomorrowland'"
+                )
+
             }
 
+            //Row 3
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -85,6 +124,13 @@ fun Menu(navController: NavController){
                     contentDescription = "",
                     eventTittle = "BAD BUNNY",
                     eventDescription = "Singing 'Un verano sin ti'"
+                )
+
+                concertCard(
+                    painter = painterResource(id = R.drawable.dualipa),
+                    contentDescription = "",
+                    eventTittle = "Dua Lipa",
+                    eventDescription = "Wears custom Mugler"
                 )
 
             }
@@ -135,12 +181,12 @@ fun concertCard(
     eventTittle: String,
     eventDescription: String
 ){
-    
     Card(
         modifier = Modifier
             .width(195.dp)
             .height(245.dp)
-            .padding(10.dp),
+            .padding(10.dp)
+            .clickable {  },
         shape = RoundedCornerShape(15.dp),
         elevation = 5.dp
     ) {
