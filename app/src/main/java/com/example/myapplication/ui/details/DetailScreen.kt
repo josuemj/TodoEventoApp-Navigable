@@ -12,27 +12,23 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.myapplication.R
-import com.example.myapplication.ui.tab.MyTab
-import com.example.myapplication.ui.tab.tabTEst
+import com.example.myapplication.ui.uielements.MyTab
 
-
-@Preview(showBackground = true)
 
 @Composable
 fun detailsScren(
 //
-//    place : String,
-//    title : String,
-//    date : String,
-//    time : String,
-//    about : String,
-//    pai
-//navController: NavController
+    place : String,
+    tittle : String,
+    date : String,
+    time : String,
+    subTittle : String,
+    eventDescription:String,
+    navController: NavController
 ){
 
     Column {Column(
@@ -67,7 +63,7 @@ fun detailsScren(
                         bottom = 4.dp
                     ), // Add negative padding values here
                 fontSize = 16.sp,
-                text = "Lugar",
+                text = place,
                 color = Color.Black
             )
         }
@@ -84,7 +80,7 @@ fun detailsScren(
                 Text(
                     modifier = Modifier.padding(start = 10.dp, top = 10.dp, bottom = 20.dp),
                     fontSize = 22.sp,
-                    text = "Title",
+                    text = tittle,
                 )
                 //Row Information
 
@@ -104,7 +100,7 @@ fun detailsScren(
 
                     Text(
                         modifier = Modifier.align(Alignment.CenterVertically),
-                        text = "Fecha",
+                        text = date,
                         fontSize = 16.sp
                     )
 
@@ -112,7 +108,7 @@ fun detailsScren(
                         modifier = Modifier
                             .align(Alignment.CenterVertically)
                             .padding(start = 250.dp),
-                        text = "Hora",
+                        text = time,
                         fontSize = 16.sp
                     )
                 }
@@ -125,7 +121,7 @@ fun detailsScren(
                     Column() {
                         Text(
                             modifier = Modifier.padding(start = 12.dp, bottom = 5.dp),
-                            text = "About",
+                            text =subTittle,
                             fontSize = 18.sp
 
                         )
@@ -133,14 +129,7 @@ fun detailsScren(
                         //Event Description text
                         Text(
                             modifier = Modifier.padding(start = 12.dp, end = 20.dp),
-                            text = "Amidst the gentle rustling of leaves " +
-                                    "and the distant chirping of birds, a " +
-                                    "sense of tranquility fills the air. The " +
-                                    "sun casts a warm golden glow, painting " +
-                                    "the sky in hues of orange and pink as it" +
-                                    " begins its slow descent. Nature seems to " +
-                                    "pause in reverence to this serene moment, " +
-                                    "creating a perfect symphony of calmness and beauty.",
+                            text = eventDescription,
                             fontSize = 14.sp
                         )
                     }
@@ -188,9 +177,7 @@ fun detailsScren(
 
         }
     }
-        //Will pass original tab
-        tabTEst()
-
+        MyTab(navController)
     }
 }
 
