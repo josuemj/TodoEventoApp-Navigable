@@ -1,48 +1,84 @@
 package com.example.myapplication.ui.details
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.myapplication.R
+import com.example.myapplication.ui.tab.MyTab
+import com.example.myapplication.ui.tab.tabTEst
 
 
 @Preview(showBackground = true)
-@Composable
-fun detailsScren(){
 
-    Column(
-        modifier = Modifier.fillMaxSize()
+@Composable
+fun detailsScren(
+//
+//    place : String,
+//    title : String,
+//    date : String,
+//    time : String,
+//    about : String,
+//    pai
+//navController: NavController
+){
+
+    Column {Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .weight(1f)
     ) {
         Box(
             modifier = Modifier
                 .fillMaxSize()
                 .background(Color(0xFFfbd9e5))
                 .weight(1f)
-        ){
+        ) {
+
+            //IDetail Image
+            Image(
+                modifier = Modifier.fillMaxSize(),
+                painter = painterResource(id = R.drawable.deadmau),
+                contentDescription = null,
+                contentScale = ContentScale.Crop
+            )
+
             Text(
                 modifier = Modifier
                     .align(Alignment.BottomStart)
-                    .padding(10.dp),
+                    .padding(10.dp)
+                    .background(Color.White)
+                    .padding(
+                        start = 4.dp,
+                        top = 4.dp,
+                        end = 4.dp,
+                        bottom = 4.dp
+                    ), // Add negative padding values here
                 fontSize = 16.sp,
-                text = "Lugar"
+                text = "Lugar",
+                color = Color.Black
             )
         }
 
+        //Second Box
         Box(
             modifier = Modifier
                 .fillMaxSize()
                 .background(Color.White)
                 .weight(1f)
-        ){
+        ) {
 
             Column() {
                 Text(
@@ -53,7 +89,9 @@ fun detailsScren(){
                 //Row Information
 
                 Row(
-                    modifier = Modifier.height(40.dp).padding(start=10.dp)
+                    modifier = Modifier
+                        .height(40.dp)
+                        .padding(start = 10.dp)
                 ) {
                     Icon(
                         modifier = Modifier
@@ -61,7 +99,8 @@ fun detailsScren(){
                             .height(30.dp)
                             .align(Alignment.CenterVertically),
                         painter = painterResource(id = R.drawable.calendaricon),
-                        contentDescription = null)
+                        contentDescription = null
+                    )
 
                     Text(
                         modifier = Modifier.align(Alignment.CenterVertically),
@@ -81,19 +120,20 @@ fun detailsScren(){
                 Box(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .height(220.dp)
-                ){
+                        .height(170.dp)
+                ) {
                     Column() {
                         Text(
-                            modifier = Modifier.padding(start =12.dp, bottom = 5.dp),
-                            text="About",
+                            modifier = Modifier.padding(start = 12.dp, bottom = 5.dp),
+                            text = "About",
                             fontSize = 18.sp
 
                         )
 
+                        //Event Description text
                         Text(
-                            modifier = Modifier.padding(start =12.dp,end=20.dp),
-                            text="Amidst the gentle rustling of leaves " +
+                            modifier = Modifier.padding(start = 12.dp, end = 20.dp),
+                            text = "Amidst the gentle rustling of leaves " +
                                     "and the distant chirping of birds, a " +
                                     "sense of tranquility fills the air. The " +
                                     "sun casts a warm golden glow, painting " +
@@ -105,7 +145,7 @@ fun detailsScren(){
                         )
                     }
                 }
-                
+
                 Row(
                     modifier = Modifier.fillMaxSize(),
                     horizontalArrangement = Arrangement.Center,
@@ -141,12 +181,15 @@ fun detailsScren(){
                             color = Color.Black
                         )
                     }
+
                 }
 
             }
 
         }
-
+    }
+        //Will pass original tab
+        tabTEst()
 
     }
 }

@@ -83,3 +83,67 @@ fun MyTab(navController: NavController){
         }
     }
 }
+
+@Composable
+fun tabTEst(){
+    Box(modifier = Modifier.fillMaxWidth().height(1.dp).background(Color(0xFFfbd9e5)))
+    Box(modifier = Modifier
+        .fillMaxWidth()
+        .height(55.dp)
+        .background(Color(0xFFf3ecf6)),
+        contentAlignment = Alignment.Center,
+    ){
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+
+            //Favorites tab button
+            IconButton(
+                onClick = { /*TODO*/ },
+                modifier = Modifier
+                    .width(50.dp)
+                    .height(50.dp)
+            )
+            {
+                Icon(
+                    painter = painterResource(id = R.drawable.favoritesicon),
+                    contentDescription = null,
+                    modifier = Modifier.width(30.dp).height(50.dp)
+                )
+
+            }
+
+            //Home tab Button
+            IconButton(
+                onClick = { },
+                modifier = Modifier
+                    .width(40.dp)
+                    .height(40.dp)
+            )
+            {
+                Icon(
+                    painter = painterResource(id = R.drawable.homeicon),
+                    contentDescription = null,
+                    modifier = Modifier.width(30.dp).height(50.dp)
+                )
+            }
+
+            //User-profile tab button
+            IconButton(
+                onClick = { },
+                modifier = Modifier
+                    .width(40.dp)
+                    .height(40.dp)
+            )
+            {
+                Icon(
+                    painter = painterResource(id = R.drawable.usericon2),
+                    contentDescription = null,
+                    modifier = Modifier.width(30.dp).height(50.dp)
+                )
+            }
+
+
+        }
+    }
+}

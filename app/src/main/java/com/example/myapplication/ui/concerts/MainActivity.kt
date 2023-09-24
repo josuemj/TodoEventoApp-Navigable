@@ -17,6 +17,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.example.myapplication.navegacion.Model
 import com.example.myapplication.ui.tab.MyTab
 
 @Composable
@@ -52,21 +53,24 @@ fun Menu(navController: NavController){
                     painter = painterResource(id = R.drawable.deadmau),
                     contentDescription = "",
                     eventTittle = "Deadmau5",
-                    eventDescription = "Cube V3 Released"
+                    eventDescription = "Cube V3 Released",
+                    navController = navController
                 )
 
                 concertCard(
                     painter = painterResource(id = R.drawable.oliver),
                     contentDescription = "",
                     eventTittle = "Oliver Heldens",
-                    eventDescription = "Just released 10 out of 10'"
+                    eventDescription = "Just released 10 out of 10'",
+                    navController = navController
                 )
 
                 concertCard(
                     painter = painterResource(id = R.drawable.garrix),
                     contentDescription = "",
                     eventTittle = "Martin Garrix",
-                    eventDescription = "Will perfom soon'"
+                    eventDescription = "Will perfom soon'",
+                    navController = navController
                 )
 
             }
@@ -84,21 +88,24 @@ fun Menu(navController: NavController){
                     painter = painterResource(id = R.drawable.billie),
                     contentDescription = "",
                     eventTittle = "Billie Eillish",
-                    eventDescription = "Performing"
+                    eventDescription = "Performing",
+                    navController = navController
                 )
 
                 concertCard(
                     painter = painterResource(id = R.drawable.tisto),
                     contentDescription = "",
                     eventTittle = "Tiesto",
-                    eventDescription = "Releasing 'Split'"
+                    eventDescription = "Releasing 'Split'",
+                    navController = navController
                 )
 
                 concertCard(
                     painter = painterResource(id = R.drawable.guetta),
                     contentDescription = "",
                     eventTittle = "David Guetta",
-                    eventDescription = "Back on Tomorrowland'"
+                    eventDescription = "Back on Tomorrowland'",
+                    navController = navController
                 )
 
             }
@@ -116,21 +123,24 @@ fun Menu(navController: NavController){
                     painter = painterResource(id = R.drawable.miko),
                     contentDescription = "",
                     eventTittle = "Youn Miko",
-                    eventDescription = "Relasing 'Wiggy'"
+                    eventDescription = "Relasing 'Wiggy'",
+                    navController = navController
                 )
 
                 concertCard(
                     painter = painterResource(id = R.drawable.bunny),
                     contentDescription = "",
                     eventTittle = "BAD BUNNY",
-                    eventDescription = "Singing 'Un verano sin ti'"
+                    eventDescription = "Singing 'Un verano sin ti'",
+                    navController = navController
                 )
 
                 concertCard(
                     painter = painterResource(id = R.drawable.dualipa),
                     contentDescription = "",
                     eventTittle = "Dua Lipa",
-                    eventDescription = "Wears custom Mugler"
+                    eventDescription = "Wears custom Mugler",
+                    navController = navController
                 )
 
             }
@@ -179,14 +189,17 @@ fun concertCard(
     painter: Painter,
     contentDescription: String,
     eventTittle: String,
-    eventDescription: String
+    eventDescription: String,
+    navController: NavController
 ){
     Card(
         modifier = Modifier
             .width(195.dp)
             .height(245.dp)
             .padding(10.dp)
-            .clickable {  },
+            .clickable {
+                navController.navigate(Model.Profile.route)
+            },
         shape = RoundedCornerShape(15.dp),
         elevation = 5.dp
     ) {
