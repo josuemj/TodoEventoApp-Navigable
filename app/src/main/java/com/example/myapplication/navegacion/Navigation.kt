@@ -13,6 +13,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.myapplication.Menu
 import com.example.myapplication.ui.details.detailsScren
+import com.example.myapplication.ui.favorites.Favorites_class
 import com.example.myapplication.ui.profile.Profile
 
 @Preview
@@ -77,8 +78,6 @@ fun navigation(){
                     nullable = true
                 }
 
-
-
             )
         ){entry->
             detailsScren(
@@ -94,7 +93,7 @@ fun navigation(){
     }
 
         composable(route = Model.Favorites.route){
-            Favorites()
+            Favorites(navController)
         }
 
 }

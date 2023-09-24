@@ -1,25 +1,38 @@
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.myapplication.ui.uielements.tabTEst
+import com.example.myapplication.ui.favorites.Favorites_class
+import com.example.myapplication.ui.uielements.favoriteCard
+import androidx.compose.foundation.lazy.items
+import androidx.compose.ui.Alignment
+import androidx.navigation.NavController
+import com.example.myapplication.ui.uielements.MyTab
 
-@Preview
+data class Concert(var drawableId:String, var eventTittle:String,var eventDescription: String)
+
+
 @Composable
-fun Favorites(){
+fun Favorites(navController: NavController){
+
 
     Column {
         topBar(varTittle = "Your favorites <3")
 
-        Column(
+        LazyColumn(
             Modifier
                 .fillMaxSize()
-                .weight(1f)) {
-
+                .weight(1f),
+            horizontalAlignment = Alignment.CenterHorizontally
+        )
+        {
+            items(items = Favorites_class.favoritesList){
+                    favCard -> favoriteCard(favCard)
+            }
         }
 
-        tabTEst()
+        MyTab(navController = navController)
 
     }
 

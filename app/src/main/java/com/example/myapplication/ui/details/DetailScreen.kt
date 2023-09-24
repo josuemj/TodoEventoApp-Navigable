@@ -1,5 +1,6 @@
 package com.example.myapplication.ui.details
 
+import Concert
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -17,6 +18,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.myapplication.R
+import com.example.myapplication.ui.favorites.Favorites_class
 import com.example.myapplication.ui.uielements.MyTab
 
 
@@ -151,7 +153,17 @@ fun detailsScren(
 
                 ) {
                     Button(
-                        onClick = { /*TODO*/ },
+
+                        onClick = {
+                            var currentConcert = Concert(drawable,tittle,subTittle)
+
+                            if(currentConcert in Favorites_class.favoritesList){
+                            }else{
+                                Favorites_class.favoritesList.add(currentConcert)
+                            }
+
+                                  },
+
                         modifier = Modifier
                             .width(170.dp)
                             .padding(end = 5.dp)
@@ -165,6 +177,7 @@ fun detailsScren(
                         )
                     }
 
+                    //Buy Button
                     Button(
                         onClick = { /*TODO*/ },
                         modifier = Modifier
