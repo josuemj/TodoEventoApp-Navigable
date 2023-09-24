@@ -13,7 +13,7 @@ import androidx.compose.foundation.*
 import com.example.myapplication.R
 
 @Composable
-fun topBar(){
+fun topBar(varTittle: String){
     Box(
         modifier = Modifier
             .fillMaxWidth()
@@ -29,16 +29,8 @@ fun topBar(){
         ) {
             Text(
                 modifier = Modifier.padding(start = 25.dp, end = 180.dp, top = 10.dp),
-                text = "TodoEventos",
+                text = varTittle,
                 fontSize = 23.sp
-            )
-
-            Image(
-                painter = painterResource(id = R.drawable.threedots),
-                contentDescription = "",
-                modifier = Modifier
-                    .width(22.dp)
-                    .height(22.dp)
             )
         }
     }

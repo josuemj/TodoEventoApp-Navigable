@@ -21,7 +21,7 @@ fun Menu(navController: NavController){
     Column(
         modifier = Modifier.fillMaxSize()
     ) {
-        topBar()
+        topBar("TodoEventos")
 
         Column(
             modifier = Modifier
@@ -54,7 +54,8 @@ fun Menu(navController: NavController){
                     eventTime = "6:00 PM",
                     eventSubtittle = "Cube V3 Relase",
                     eventDescription = "Long event Description",
-                    navController = navController
+                    navController = navController,
+                    drawableID = R.drawable.deadmau.toString()
                 )
 
                 concertCard(
@@ -68,19 +69,26 @@ fun Menu(navController: NavController){
                     eventDescription = "Oliver Heldens es un rapero, DJ y productor neerlandés. " +
                             "Es uno de los máximos referentes " +
                             "del nuevo género conocido como Deep house y Future house.",
-                    navController = navController
+                    navController = navController,
+                    drawableID = R.drawable.oliver.toString()
                 )
 
                 concertCard(
                     painter = painterResource(id = R.drawable.garrix),
                     contentDescription = "",
-                    place = "Chicago",
-                    eventTittle = "Deadmau full set",
-                    date = "10/10/24",
+                    place = "RTU Guatemala",
+                    eventTittle = "Marin Garrrix",
+                    date = "Tomorrow",
                     eventTime = "6:00 PM",
-                    eventSubtittle = "Cube V3 Relase",
-                    eventDescription = ".................",
-                    navController = navController
+                    eventSubtittle = "Releasgin 'Yottabyte'",
+                    eventDescription = "Beyond his music career" +
+                            ", Martin Garrix is recognized for his phila" +
+                            "thropic efforts and commitment to sustainability. " +
+                            "He has actively supported causes such as War Child " +
+                            "and The Ocean Cleanup, reflecting his dedication to making " +
+                            "a positive impact on the world",
+                    navController = navController,
+                    drawableID = R.drawable.garrix.toString()
                 )
 
             }
@@ -97,37 +105,53 @@ fun Menu(navController: NavController){
                 concertCard(
                     painter = painterResource(id = R.drawable.billie),
                     contentDescription = "",
-                    place = "Chicago",
-                    eventTittle = "Deadmau full set",
-                    date = "10/10/24",
-                    eventTime = "6:00 PM",
-                    eventSubtittle = "Cube V3 Relase",
-                    eventDescription = ".................",
-                    navController = navController
+                    place = "Toronto",
+                    eventTittle = "Billie Eilish",
+                    date = "Today",
+                    eventTime = "9:00 PM",
+                    eventSubtittle = "Bad guy throw back",
+                    eventDescription = "Billie Eilish's breakthrough came " +
+                            "with her debut single \"Ocean Eyes\" in 2015, which " +
+                            "quickly went viral, propelling her to stardom. " +
+                            "She released her debut EP, \"Don't Smile at Me,\" " +
+                            "in 2017, which included several successful tracks.",
+                    navController = navController,
+                    drawableID = R.drawable.billie.toString()
                 )
 
                 concertCard(
                     painter = painterResource(id = R.drawable.tisto),
                     contentDescription = "",
-                    place = "Chicago",
-                    eventTittle = "Deadmau full set",
-                    date = "10/10/24",
-                    eventTime = "6:00 PM",
-                    eventSubtittle = "Cube V3 Relase",
-                    eventDescription = ".................",
-                    navController = navController
+                    place = "Thailandia",
+                    eventTittle = "Tiesto",
+                    date = "12-04-25",
+                    eventTime = "7:00 PM",
+                    eventSubtittle = "Tiesto is back",
+                    eventDescription = "Throughout his career, Tiësto's impact on EDM " +
+                            "culture has been immeasurable. He has paved the way for countless " +
+                            "artists, and his influence continues to shape the electronic music " +
+                            ". His dedication to pushing boundaries and delivering unforgettable " +
+                            "music experiences has solidified his legendary status in the world of " +
+                            "dance music.",
+                    navController = navController,
+                    drawableID = R.drawable.tisto.toString()
                 )
 
                 concertCard(
                     painter = painterResource(id = R.drawable.guetta),
                     contentDescription = "",
-                    place = "Chicago",
-                    eventTittle = "Deadmau full set",
-                    date = "10/10/24",
+                    place = "Singapur",
+                    eventTittle = "David Guetta",
+                    date = "01-10-27",
                     eventTime = "6:00 PM",
-                    eventSubtittle = "Cube V3 Relase",
-                    eventDescription = ".................",
-                    navController = navController
+                    eventSubtittle = "Guetta re-designing electro genre",
+                    eventDescription = "His albums, including 'Nothing But the Beat' and 'Listen'," +
+                            " have been critically acclaimed and have showcased his evolution as an" +
+                            " artist. He continues to push boundaries and experiment with new sounds, " +
+                            "ensuring his music remains fresh and relevant.",
+                    navController = navController,
+                    drawableID = R.drawable.guetta.toString()
+
                 )
 
             }
@@ -144,37 +168,45 @@ fun Menu(navController: NavController){
                 concertCard(
                     painter = painterResource(id = R.drawable.miko),
                     contentDescription = "",
-                    place = "Chicago",
-                    eventTittle = "Deadmau full set",
-                    date = "10/10/24",
-                    eventTime = "6:00 PM",
-                    eventSubtittle = "Cube V3 Relase",
-                    eventDescription = ".................",
-                    navController = navController
+                    place = "San Salvador",
+                    eventTittle = "Young Miko",
+                    date = "10-10-24",
+                    eventTime = "4:00 PM",
+                    eventSubtittle = "Will perfon soon 'Wiggy'",
+                    eventDescription = "Karol G llamó a una invitada especial a subirse al " +
+                            "escenario: la rapera puertorriqueña Young Miko, telonera de su gira " +
+                            "internacional. Vestida con un crop top rosa vibrante y pantalones " +
+                            "anchos a juego, Young Miko tomó a Karol de la mano mientras ambas " +
+                            "interpretaban su exitosa colaboración 'Dispo'",
+                    navController = navController,
+                    drawableID = R.drawable.miko.toString()
                 )
 
                 concertCard(
                     painter = painterResource(id = R.drawable.bunny),
                     contentDescription = "",
-                    place = "Chicago",
-                    eventTittle = "Deadmau full set",
-                    date = "10/10/24",
-                    eventTime = "6:00 PM",
-                    eventSubtittle = "Cube V3 Relase",
-                    eventDescription = ".................",
-                    navController = navController
+                    place = "PR",
+                    eventTittle = "Bad Bunny",
+                    date = "01-12-23",
+                    eventTime = "11:00 PM",
+                    eventSubtittle = "Bad Bunny will be back",
+                    eventDescription = "Drake teased collaborations with Nicki Minaj and Bad Bunny." +
+                            " The latter marks the duo’s first collaboration since 2018’s “MÍA,” where Drak",
+                    navController = navController,
+                    drawableID = R.drawable.bunny.toString()
                 )
 
                 concertCard(
                     painter = painterResource(id = R.drawable.dualipa),
                     contentDescription = "",
-                    place = "Chicago",
-                    eventTittle = "Deadmau full set",
-                    date = "10/10/24",
-                    eventTime = "6:00 PM",
-                    eventSubtittle = "Cube V3 Relase",
-                    eventDescription = ".................",
-                    navController = navController
+                    place = "Mexico DF",
+                    eventTittle = "Dua Lipa",
+                    date = "10-10-24",
+                    eventTime = "3:00 PM",
+                    eventSubtittle = "Levitating Tour",
+                    eventDescription = "Dua lipa....",
+                    navController = navController,
+                    drawableID = R.drawable.dualipa.toString()
                 )
 
             }

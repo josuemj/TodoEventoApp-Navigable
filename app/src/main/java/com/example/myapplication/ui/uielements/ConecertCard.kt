@@ -30,7 +30,8 @@ fun concertCard(
     eventTime:String,
     eventSubtittle:String,
     eventDescription: String,
-    navController: NavController
+    navController: NavController,
+    drawableID: String
 ){
     Card(
         modifier = Modifier
@@ -45,7 +46,8 @@ fun concertCard(
                     date,
                     eventTime,
                     eventSubtittle,
-                    eventDescription
+                    eventDescription,
+                        drawableID
                 ))
             },
         shape = RoundedCornerShape(15.dp),

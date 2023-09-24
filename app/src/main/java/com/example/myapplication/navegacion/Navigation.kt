@@ -1,5 +1,7 @@
 package com.example.myapplication.navegacion
 
+import android.graphics.drawable.Drawable
+import androidx.annotation.DrawableRes
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
@@ -30,7 +32,7 @@ fun navigation(){
         }
 
         composable(
-            route = Model.detailsScren.route+"/{place}/{eventTittle}/{date}/{eventTime}/{eventSubtittle}/{eventDescription}",
+            route = Model.detailsScren.route+"/{place}/{eventTittle}/{date}/{eventTime}/{eventSubtittle}/{eventDescription}/{eventIDImage}",
             arguments = listOf(
                 navArgument("place"){
                     type = NavType.StringType
@@ -65,6 +67,12 @@ fun navigation(){
                     type = NavType.StringType
                     defaultValue=""
                     nullable = true
+                },
+
+                navArgument("eventIDImage"){
+                    type = NavType.StringType
+                    defaultValue=""
+                    nullable = true
                 }
 
 
@@ -78,6 +86,7 @@ fun navigation(){
                 time = entry.arguments?.getString("eventTime")!!,
                 subTittle = entry.arguments?.getString("eventSubtittle")!!,
                 eventDescription = entry.arguments?.getString("eventDescription")!!,
+                drawable = entry.arguments?.getString("eventIDImage")!!,
                 navController = navController
             )
 
