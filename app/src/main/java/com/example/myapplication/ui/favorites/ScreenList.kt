@@ -14,13 +14,16 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import com.example.myapplication.ui.uielements.MyTab
+import com.example.myapplication.ui.uielements.tabTEst
 
 data class Event(val iconLetter: String, val groupName: String,val place:String)
 
 
-@Preview(showBackground = true)
+
 @Composable
-fun screenList(){
+fun ScreenList(navController: NavController){
 
     var eventsList = mutableListOf<Event>()
     
@@ -46,12 +49,20 @@ fun screenList(){
     eventsList.add(event_9)
     eventsList.add(event_10)
 
-
-    LazyColumn() {
-        items(items = eventsList) { event ->
-            listElement(event = event)
+    Column(
+        modifier = Modifier.fillMaxSize()
+    ) {
+        LazyColumn(
+            modifier = Modifier.weight(1f)
+        ) {
+            items(items = eventsList) { event ->
+                listElement(event = event)
+            }
         }
+        MyTab(navController)
+
     }
+
 
 }
 

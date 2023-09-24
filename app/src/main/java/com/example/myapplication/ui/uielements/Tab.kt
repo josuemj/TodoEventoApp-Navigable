@@ -75,6 +75,20 @@ fun MyTab(navController: NavController){
                 )
             }
 
+            IconButton(
+                onClick = { navController.navigate(Model.ScreenList.route) },
+                modifier = Modifier
+                    .width(40.dp)
+                    .height(40.dp)
+            )
+            {
+                Icon(
+                    painter = painterResource(id = R.drawable.worldicon),
+                    contentDescription = null,
+                    modifier = Modifier.width(30.dp).height(50.dp)
+                )
+            }
+
             
         }
     }

@@ -6,6 +6,7 @@ sealed class Model(val route:String){
     object Profile : Model("profile_screen")
     object detailsScren : Model("details_screen")
     object Favorites : Model("favorires_screen")
+    object ScreenList : Model("list_screen")
 
     fun withArgs(vararg args: String):String{
         return buildString {
