@@ -31,7 +31,7 @@ fun MyTab(navController: NavController){
 
             //Favorites tab button
             IconButton(
-                onClick = { /*TODO*/ },
+                onClick = { navController.navigate(Model.Favorites.route) },
                 modifier = Modifier
                     .width(50.dp)
                     .height(50.dp)

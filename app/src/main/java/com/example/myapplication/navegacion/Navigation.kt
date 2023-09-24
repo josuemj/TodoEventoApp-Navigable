@@ -1,5 +1,6 @@
 package com.example.myapplication.navegacion
 
+import Favorites
 import android.graphics.drawable.Drawable
 import androidx.annotation.DrawableRes
 import androidx.compose.runtime.Composable
@@ -31,6 +32,7 @@ fun navigation(){
             Profile(navController = navController)
         }
 
+        //Details screen
         composable(
             route = Model.detailsScren.route+"/{place}/{eventTittle}/{date}/{eventTime}/{eventSubtittle}/{eventDescription}/{eventIDImage}",
             arguments = listOf(
@@ -89,7 +91,11 @@ fun navigation(){
                 drawable = entry.arguments?.getString("eventIDImage")!!,
                 navController = navController
             )
-
     }
+
+        composable(route = Model.Favorites.route){
+            Favorites()
+        }
+
 }
 }
