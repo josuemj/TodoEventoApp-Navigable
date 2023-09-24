@@ -41,6 +41,7 @@ fun Menu(navController: NavController){
                 fontSize = 18.sp
             )
 
+            //Row 1
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -212,6 +213,68 @@ fun Menu(navController: NavController){
                     eventDescription = "Dua lipa....",
                     navController = navController,
                     drawableID = R.drawable.dualipa.toString()
+                )
+
+            }
+            //Row 4
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .horizontalScroll(
+                        rememberScrollState()
+                    )
+            ){
+
+                concertCard(
+                    painter = painterResource(id = R.drawable.galantids),
+                    contentDescription = "",
+                    place = "Brazil",
+                    eventTittle = "Galantis",
+                    date = "10-10-24",
+                    eventTime = "12:00 PM",
+                    eventSubtittle = "LIVE NOW",
+                    eventDescription = "Galantis i" +
+                            "s a Swedish electronic music" +
+                            " duo consisting of Christian Karl" +
+                            "sson and Linus Eklöw. They are well-known" +
+                            "for their contributions to the electronic dan" +
+                            "ce music (EDM) genre and have achieved significant succ" +
+                            "ess on a global scale. Here's a brief description of Galantis"
+                            ,
+                    navController = navController,
+                    drawableID = R.drawable.galantids.toString()
+                )
+
+                concertCard(
+                    painter = painterResource(id = R.drawable.imaginedragons),
+                    contentDescription = "",
+                    place = "Russia",
+                    eventTittle = "Imagine Dragons",
+                    date = "01-12-23",
+                    eventTime = "11:00 PM",
+                    eventSubtittle = "Whatever it takes...",
+                    eventDescription = "The band's music often explores themes of self-discove" +
+                            "ry, empowerment, and resilience, and their lyrics resonate with a br" +
+                            "songs has made them a favorite among fans of rock and pop music",
+                    navController = navController,
+                    drawableID = R.drawable.imaginedragons.toString()
+                )
+
+                concertCard(
+                    painter = painterResource(id = R.drawable.acdc),
+                    contentDescription = "",
+                    place = "Allianz Arena",
+                    eventTittle = "ACDC",
+                    date = "10-10-24",
+                    eventTime = "3:00 PM",
+                    eventSubtittle = "Hell belling NOW",
+                    eventDescription = "Formed in Sydney, Australia, in 1973, AC DC is " +
+                            "one of the most iconic and enduring rock bands in the history" +
+                            " of music. The band's name, AC DC is often interpreted as " +
+                            "referring to Alternating Current Direct Current, which captures " +
+                            "their high-energy and electrifying sound..",
+                    navController = navController,
+                    drawableID = R.drawable.acdc.toString()
                 )
 
             }
